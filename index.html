@@ -1,0 +1,65 @@
+<!doctype html>
+
+<html ng-app="Weather">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="Ulrika Sandberg">
+		<title>Weather</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="app/app.js"></script>
+		<script src="app/app.controller.js"></script>
+		<script src="app/app.datastore.js"></script>
+		<script src="app/util/xmlparser.js"></script>
+		<script src="app/util/urlmanager.js"></script>
+		<link rel="stylesheet" type="text/css" href="resources/css/app.css">
+	</head>
+	<body ng-controller="WeatherController">
+		<div id="wrapper">
+			
+			<!-- Vädret idag -->	
+			<div id="today">
+				<div class="time-today">
+					<p>Today <span ng-bind="today.date | date:'EEEE dd MMM'"></span></p>
+				</div>
+				<table>
+					<tr>
+						<td>
+							<img src="{{today.symbol}}" alt="{{today.description}}" />
+						</td>
+						<td>
+							<p class="temp-today">{{today.temperature}}&#8451;</p>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<p class="description">{{today.description}}</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+		
+			<!-- Prognos för kommande dagar -->
+			<div id="forecast">
+				<table>
+					<tr ng-repeat="item in forecast">
+						<td>
+							<p class="time" ng-bind="item.date | date:'EEEE dd MMM'"></p>
+							<p><img src="{{item.symbol}}" alt="{{item.description}}" /></p>
+						</td>
+						<td>
+							<p>{{item.description}}</p>
+						</td>
+						<td>
+							<p class="temp">{{item.temperature}}&#8451;</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+			
+		</div>
+		<footer>
+		Av Ulrika Sandberg. Väderdata från <a href="http://www.yr.no/place/Sweden/Norrbotten/Luleå/">YR</a>
+		</footer>
+	</body>
+</html>

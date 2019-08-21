@@ -1,0 +1,81 @@
+:root {
+	--app-bg: #f3f0ff;
+	--app-fg: #ffffff;
+	--accent-color: #36005f;
+	--text: #333333;
+}
+
+html, body {
+	background: var(--app-bg);
+	color: var(--text);
+	font-family: helvetica, sans-serif;
+	font-size: 16px;
+	height: 100%;
+}
+
+p {
+	margin: 5px;
+}
+
+footer,
+#wrapper {
+	margin: auto;
+	width: 80%;
+}
+
+footer {
+	text-align: center;
+}
+
+#today,
+#forecast {
+	background: var(--app-fg);
+	border: 1px solid var(--accent-color);
+	border-radius: 3px;
+	margin: 10px 0;
+}
+
+.time, 
+.time-today {
+	background: var(--app-fg);
+	color: var(--accent-color);
+	font-variant: small-caps;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0;
+}
+
+.time-today {
+	font-size: 16px;
+	margin: 9px;
+}
+
+.temp-today {
+	font-size: 54px;
+	font-weight: bold;
+}
+
+.temp {
+	font-weight: bold;
+}
+
+.description {
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 15px;
+}
+
+#forecast table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#forecast td {
+	vertical-align: center;
+	border-bottom: 1px solid var(--accent-color);
+	width: 33%;
+}
+
+footer {
+	font-size: 12px;
+}
